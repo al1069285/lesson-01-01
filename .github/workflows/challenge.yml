@@ -1,41 +1,41 @@
-name: challenge
+# name: challenge
 
-on: push
+# on: push
 
-jobs:
-  job1:
-    name: First job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Step one
-        uses: actions/checkout@v2
-      - name: Step two
-        run:  |
-              now="date"
-              echo "$now"
-              echo "Current date: $now"
-  job2:
-    name: Second job
-    runs-on: windows-latest
-    steps:
-      - name: Step one
-        uses: actions/checkout@v2
-      - name: Step two
-        run: "Write-Output 'Backups complete at $(Get-Date)'"
-  job3:
-    name: Third job
-    runs-on: macos-latest
-    steps:
-      - name: Step one
-        uses: actions/checkout@v2
-      - name: Step two
-        run:  date -j -vJulm -v20d -v1999y '+%A'
-  job4:
-    name: Forth job
-    needs: [job1, job2, job3]
-    runs-on: windows-latest
-    steps:
-      - name: Step one
-        uses: actions/checkout@v2
-      - name: Step two
-        run: "Get-ChildItem Env: | Sort-Object Name"
+# jobs:
+#   job1:
+#     name: First job
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Step one
+#         uses: actions/checkout@v2
+#       - name: Step two
+#         run:  |
+#               now="date"
+#               echo "$now"
+#               echo "Current date: $now"
+#   job2:
+#     name: Second job
+#     runs-on: windows-latest
+#     steps:
+#       - name: Step one
+#         uses: actions/checkout@v2
+#       - name: Step two
+#         run: "Write-Output 'Backups complete at $(Get-Date)'"
+#   job3:
+#     name: Third job
+#     runs-on: macos-latest
+#     steps:
+#       - name: Step one
+#         uses: actions/checkout@v2
+#       - name: Step two
+#         run:  date -j -vJulm -v20d -v1999y '+%A'
+#   job4:
+#     name: Forth job
+#     needs: [job1, job2, job3]
+#     runs-on: windows-latest
+#     steps:
+#       - name: Step one
+#         uses: actions/checkout@v2
+#       - name: Step two
+#         run: "Get-ChildItem Env: | Sort-Object Name"

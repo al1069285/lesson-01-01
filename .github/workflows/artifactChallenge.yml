@@ -1,0 +1,20 @@
+name: airtifactChallenge
+
+on: push
+
+env: 
+  ENVIRONMENT_VARIABLE: myArtifact
+
+jobs:
+  job1:
+    name: First job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: Upload the artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.ENVIRONMENT_VARIABLE }}
+          path: .
+          
